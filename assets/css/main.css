@@ -85,7 +85,7 @@ aside>section {
 	display: flex;
 	flex-direction: column;
 	width: 50%;
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 #contactForm p {
@@ -97,7 +97,7 @@ aside>section {
 #contactForm label {
 	flex: 1;
 	text-align: right;
-    padding-right:2em;
+	padding-right: 2em;
 }
 
 #contactForm input,
@@ -111,29 +111,29 @@ aside>section {
 	flex: 3;
 }
 
-#homeDiv{
+#homeDiv {
 	display: flex;
 	flex-flow: row wrap;
 }
 
-#homeDiv > section{
+#homeDiv>section {
 	background-color: #cecece;
-	padding : 1em;
-	flex:1;
+	padding: 1em;
+	flex: 1;
 	opacity: .5;
 	margin: 1em;
 	border-radius: 10px;
 	color: #000;
 }
 
-main>#galleryArticle {
+#galleryDiv {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
 	justify-content: space-around;
 }
 
-main>#galleryArticle>img {
+#galleryDiv>img {
 	width: 20em;
 	height: 10em;
 	padding: 1em;
