@@ -1,0 +1,21 @@
+
+body {
+	background-color: #19181c;
+	color: #e8e7f0;
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+
+nav > ul {
+	display: flex;
+	flex-direction: row;
+}
+nav > ul > li {
+	flex: 1;
+}
+
+header img {
+width:5em;
+height: 5em;
+}
