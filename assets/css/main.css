@@ -61,7 +61,7 @@ nav>ul>li:hover,
 
 
 .activeTab>a {
-	color: #b4a9ff;
+	color: #fff;
 }
 
 nav a {
@@ -153,6 +153,7 @@ section {
 
 #galleryDiv>img {
 	width: 40%;
+	height: 100%;
 	border-radius: 10px;
 	background-color: #cecece;
 	margin: .5em;
