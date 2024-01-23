@@ -4,6 +4,8 @@ body {
 	font-family: sans-serif;
 	display: flex;
 	flex-direction: column;
+	margin:0;
+	min-height: 100vh;
 }
 
 
@@ -35,20 +37,29 @@ nav>ul>li {
 	flex: 1;
 	border-radius: 10px;
 	color: #e8e7f0;
-	border: 1px solid #e8e7f0;
 	text-align: center;
-	padding: 1em 2em;
-	margin: 1em;
+	font-weight: bold;
 	list-style-type: none;
 }
 
-.activeTab {
-	border: 2px solid #b4a9ff;
+nav>ul>li a {
+	display: block;
+	width:100%;
+	padding-top: 1em;
+    padding-bottom: 1em;
 }
+
+
+nav>ul>li:hover,
+.activeTab {
+	color: #e8e7f0;
+	background-color: #6c5dd3;
+	border: 0px solid #e8e7f0;
+}
+
 
 .activeTab>a {
 	color: #b4a9ff;
-	font-weight: bold;
 }
 
 nav a {
@@ -71,11 +82,15 @@ main>article {
 }
 
 main>aside {
+	background-color: #201f24;
+	border-radius: 10px;
+	padding: 2em;
+	margin: 1em;
 	flex: 1;
 }
 
-aside>section {
-	background-color: #201f24;
+section {
+	background-color: #262529;
 	border-radius: 10px;
 	padding: 2em;
 	margin: 1em;
@@ -105,6 +120,7 @@ aside>section {
 	flex: 2;
 	padding: 1em;
 	width: 100%;
+	border-radius: 10px;
 }
 
 #contactForm button {
@@ -134,15 +150,14 @@ aside>section {
 }
 
 #galleryDiv>img {
-	width: 20em;
-	height: 10em;
-	padding: 1em;
+	width: 40%;
 	border-radius: 10px;
 	background-color: #cecece;
 	margin: .5em;
 }
 
 footer {
+	margin-top: auto;
 	display: flex;
 	flex-direction: row;
 	text-align: center;
@@ -151,11 +166,52 @@ footer {
 }
 
 
-footer>section {
-	flex: 1;
+footer>a {
+	text-decoration: none;
+	color: white;
 }
 
 
+table {
+	width: 100%
+}
+
+table,
+th,
+td {
+	border-collapse: collapse;
+}
+
+tr {
+	display: flex;
+	flex-direction: row;
+	padding: .5em 0;
+}
+
+table>thead>tr {
+	background-color: #252629;
+}
+
+thead>tr th:first-child {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+thead>tr th:last-child {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+th,
+td {
+	flex:1;
+	text-align: center;
+	color: #8d8d8f
+}
+
+table>tbody tr>td:first-child {
+	color: #ffff;
+}
 
 .purpleButton {
 	margin: 2em 0;
