@@ -7,7 +7,7 @@ const submitContactForm = () => {
  * Demonstrate to pass function as argument to another function
  * addNumber() , substractNumber(), multipleNumber(), divideNumber() : functions that can be passed as argument
  * operateNumber() : function passing another function as argument 
- */ 
+ */
 
 const addNumber = ({ x, y }) => x + y;
 const substractNumber = ({ x, y }) => x - y;
@@ -23,14 +23,16 @@ console.log(operateNumber({ x: 5, y: 3, operation: addNumber }));
  * JS Assigment - 2
  * Array function to return initials of firstname , lastname string paramters as argument
  * getInitials() : function implementation
- */ 
+ */
 
-const getInitials = ({ firstname, lastname }) => {
-    let initial = "";
-    for (let i = 0; i < arguments.length; i++) {
-        initial += arguments[i].charAt(0);
+const getInitials = ({ firstname, lastname, ...args }) => {
+    let initials = firstname.charAt(0);
+    const valuesArray = Object.values(args);
+    for (const x of valuesArray) {
+        initials += x.charAt(0);
     }
-    return initial;
+    initials += lastname.charAt(0);
+    return initials;
 }
 
-console.log(initials({ firstname: 'Roger', lastname: 'Wagner' }));
+console.log(getInitials({ firstname: 'Roger', lastname: 'Wagner', middleName: 'John' }));
