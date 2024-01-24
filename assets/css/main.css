@@ -9,10 +9,13 @@ body {
 	overflow-y: scroll;
 }
 
+header > ul {
+	display: flex;
+	flex-direction: row;
+}
 
 
 header li {
-	display: inline;
 	list-style-type: none;
 }
 
@@ -20,6 +23,7 @@ header img {
 	width: 5em;
 	height: 5em;
 	border-radius: 10px;
+	margin-right: 1em;
 }
 
 nav {
@@ -38,7 +42,6 @@ nav>ul {
 nav>ul>li {
 	flex: 1;
 	border-radius: 10px;
-	color: #e8e7f0;
 	text-align: center;
 	font-weight: bold;
 	list-style-type: none;
@@ -54,9 +57,9 @@ nav>ul>li a {
 
 nav>ul>li:hover,
 .activeTab {
-	color: #e8e7f0;
 	background-color: #6c5dd3;
 	border: 0px solid #e8e7f0;
+	box-shadow: 0px 2px 5px #e8e7f0;
 }
 
 
@@ -127,21 +130,6 @@ section {
 
 #contactForm button {
 	flex: 3;
-}
-
-#homeDiv {
-	display: flex;
-	flex-flow: row wrap;
-}
-
-#homeDiv>section {
-	background-color: #cecece;
-	padding: 1em;
-	flex: 1;
-	opacity: .5;
-	margin: 1em;
-	border-radius: 10px;
-	color: #000;
 }
 
 #galleryDiv {
