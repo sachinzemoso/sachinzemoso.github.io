@@ -236,6 +236,15 @@ footer h2 {
 	font-size: 15px;
 }
 
+footer > ul {
+	display: flex;
+	flex-direction: row;
+}
+
+footer > ul li {
+	list-style-type: none;
+}
+
 .purpleButton {
 	margin: 2em 0;
 	background-color: #6c5dd3;
