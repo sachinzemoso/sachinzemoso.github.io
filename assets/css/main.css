@@ -79,7 +79,7 @@ main {
 }
 
 main>article {
-	flex: 4;
+	flex: 2;
 	background-color: #201f24;
 	border-radius: 10px;
 	padding: 2em;
@@ -140,28 +140,13 @@ section {
 }
 
 #galleryDiv>img {
-	width: 40%;
-	height: 100%;
 	border-radius: 10px;
 	background-color: #cecece;
-	margin: .5em;
+	width: 400px;
+	height: 400px;
+	object-fit: cover;
+	margin: 1em;
 }
-
-footer {
-	margin-top: auto;
-	display: flex;
-	flex-direction: row;
-	text-align: center;
-	justify-content: space-around;
-	background-color: #201f24;
-}
-
-
-footer>a {
-	text-decoration: none;
-	color: white;
-}
-
 
 table {
 	width: 100%
@@ -197,11 +182,58 @@ th,
 td {
 	flex:1;
 	text-align: center;
-	color: #8d8d8f
+	color: #8d8d8f;
+	font-size: 20px;
+
 }
 
 table>tbody tr>td:first-child {
 	color: #ffff;
+}
+
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size: 35px;
+}
+h3 {
+	font-size: 30px;
+}
+h4 {
+	font-size: 25px;
+}
+
+p {
+	margin: 1em 0;
+	font-size: 20px;
+}
+
+
+ol > li {
+	font-size: 20px;
+}
+
+
+footer {
+	margin-top: auto;
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	justify-content: space-around;
+	background-color: #201f24;
+}
+
+
+footer>a {
+	text-decoration: none;
+	color: white;
+}
+
+footer h2 {
+	text-decoration: none;
+	color: white;
+	font-size: 15px;
 }
 
 .purpleButton {
