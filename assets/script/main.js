@@ -257,3 +257,28 @@ const { name, age } = person;
 console.log(name);
 console.log(age);
 
+/**
+ * Assignment of storage using local and session
+ */
+const incrementLocal = () => {
+    if (localStorage.getItem("localVariableKey")) {
+        let count = localStorage.getItem("localVariableKey");
+        count = parseInt(count) + 1;
+        localStorage.setItem("localVariableKey", count)
+    } else {
+        localStorage.setItem("localVariableKey", 0)
+    }
+    document.querySelector('#localSpan').textContent = localStorage.getItem("localVariableKey");
+}
+
+const incrementSession = () => {
+    if (sessionStorage.getItem("sessionVariableKey")) {
+        let count = sessionStorage.getItem("sessionVariableKey");
+        count = parseInt(count) + 1;
+        sessionStorage.setItem("sessionVariableKey", count)
+    } else {
+        sessionStorage.setItem("sessionVariableKey", 0)
+    }
+    document.querySelector('#sessionSpan').textContent = sessionStorage.getItem("sessionVariableKey");
+}
+
