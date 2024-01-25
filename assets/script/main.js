@@ -213,3 +213,47 @@ const searchHandler = () => {
 }
 const search = debounceFunc(searchHandler, 500);
 
+/**
+ * ES6 assignment 1 - to convert below function to single line
+ * 
+ *  const printName = (name) => {
+ *      return “Hi” + name;
+ *  }
+ */
+
+const printName = (name) =>`Hi ${name}`;
+
+/**
+ * ES6 assignment 2 - to convert below function to use template literals
+ * 
+ *  const printBill = (name, bill) => {
+ *      return “Hi “ + name + “, please pay: “ + bill;
+ *  }
+ */
+
+const printBill = ({name, bill}) => `Hi ${name}, please pay: ${bill}`;
+
+/**
+ * ES6 assignment 3 - to destructured below function 
+ * 
+ *  const person = {
+ *           name: “Noam Chomsky”,
+ *           age: 92
+ *  }
+ *          
+ *  let name = person.name;
+ *  let age = person.age;
+ *  console.log(name);
+ *  console.log(age);
+ */
+
+const person = {
+    name: "Noam Chomsky",
+    age: 92
+};
+
+const { name, age } = person;
+
+console.log(name);
+console.log(age);
+
