@@ -126,3 +126,34 @@ const getInitials = ({ firstname, lastname, ...args }) => {
 }
 
 console.log(getInitials({ firstname: 'Roger', lastname: 'Wagner', middleName: 'John' }));
+
+/**
+ * JS assignment on async await 
+ */
+
+const getData = (uId) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Fetched the data!");
+            if (uId === 'skc') {
+                resolve(`${uId}@gmail.com`);
+            } else {
+                reject("error");
+            }
+        }, 4000);
+    });
+};
+
+const logProcess = async () => {
+    console.log("start");
+    try {
+        let email = await getData("skc");
+        console.log("Email id of the user id is: " + email);
+    } catch (error) {
+        console.error("Error:", error);
+    } finally {
+        console.log("end");
+    }
+};
+
+logProcess();
