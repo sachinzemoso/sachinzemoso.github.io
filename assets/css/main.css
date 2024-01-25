@@ -17,7 +17,13 @@ header > ul {
 
 header li {
 	list-style-type: none;
+	flex:1
 }
+
+header li:nth-child(2) {
+	flex:10
+}
+
 
 header img {
 	width: 5em;
@@ -55,13 +61,16 @@ nav>ul>li a {
 }
 
 
-nav>ul>li:hover,
+nav>ul>li:hover:not(.activeTab) {
+	background-color: #a194f5;
+	border: 0px solid #e8e7f0;
+	box-shadow: 0px 0px 2px #e8e7f0;
+}
+
 .activeTab {
 	background-color: #6c5dd3;
 	border: 0px solid #e8e7f0;
-	box-shadow: 0px 2px 5px #e8e7f0;
 }
-
 
 .activeTab>a {
 	color: #fff;
@@ -245,6 +254,11 @@ footer > ul li {
 	list-style-type: none;
 }
 
+footer > ul button {
+	height: 48px;
+	width: 48px;
+}
+
 .purpleButton {
 	margin: 2em 0;
 	background-color: #6c5dd3;
@@ -254,4 +268,8 @@ footer > ul li {
 	text-decoration: none;
 	font-size: 20px;
 	border: 0px;
+}
+
+.customHide {
+	display: none;
 }

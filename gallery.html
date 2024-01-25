@@ -13,10 +13,15 @@
 <body>
     <header>
         <ul>
-            <li><img src="assets/image/site_logo.jpg" alt="My display picture"></li>
-            <li>
-                <h1>Sachin Goyal</h1>
-            </li>
+			<li><img src="assets/image/site_logo.jpg" alt="My display picture"></li>
+			<li>
+				<h1>Sachin Goyal</h1>
+			</li>
+			<li>
+                <input id="searchInput" type="text" placeholder="Search" class="customHide" onkeyup="search()">
+				<input type="button" onclick="shotgun()" value="Fire Shotgun" class="customHide">
+                <input type="button" onclick="machinegun()" value="Fire Machinegun" class="customHide">
+			</li>
         </ul>
     </header>
 

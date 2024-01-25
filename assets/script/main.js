@@ -81,16 +81,45 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     }
 
-    const small = makeSizer(30);
+    const small = makeSizer(36);
     const medium = makeSizer(40);
-    const large = makeSizer(50);
+    const large = makeSizer(44);
 
 
-    document.getElementById('size-s').onclick = small;
-    document.getElementById('size-m').onclick = medium;
-    document.getElementById('size-l').onclick = large;
+    document.querySelector('#size-s').onclick = small;
+    document.querySelector('#size-m').onclick = medium;
+    document.querySelector('#size-l').onclick = large;
 
 });
+
+/** Throttling */
+const handlerTrigger = (shot) => {
+    console.log(shot);
+};
+
+const throttleGun = (func, interval) => {
+    let shouldFire = true;
+
+    return function () {
+        if (shouldFire) {
+            func();
+            shouldFire = false;
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    shouldFire = true;
+                    resolve();
+                }, interval);
+            });
+        }
+    };
+};
+
+const machinegunThrottled = throttleGun(() => handlerTrigger('tr'), 100);
+const shotgunThrottled = throttleGun(() => handlerTrigger('bang'), 500);
+
+const machinegun = () => machinegunThrottled();
+const shotgun = () => shotgunThrottled();
+
 
 /**
  * JS Assigment - 1
@@ -157,3 +186,4 @@ const logProcess = async () => {
 };
 
 logProcess();
+
