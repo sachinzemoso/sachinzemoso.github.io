@@ -187,3 +187,29 @@ const logProcess = async () => {
 
 logProcess();
 
+const debounceFunc = (func, delay) => {
+    let timeoutId;
+
+    return function (...args) {
+        const context = this;
+        return new Promise((resolve) => {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+
+            timeoutId = setTimeout(() => {
+                func.apply(context, args);
+                resolve();
+            }, delay);
+        });
+    };
+};
+
+
+const searchHandler = () => {
+    const searchInput = document.querySelector('#searchInput').value;
+    const timestamp = new Date().toLocaleTimeString();
+    console.log(`[${timestamp}] Search Input: ${searchInput}`);
+}
+const search = debounceFunc(searchHandler, 500);
+
