@@ -187,3 +187,98 @@ const logProcess = async () => {
 
 logProcess();
 
+const debounceFunc = (func, delay) => {
+    let timeoutId;
+
+    return function (...args) {
+        const context = this;
+        return new Promise((resolve) => {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+
+            timeoutId = setTimeout(() => {
+                func.apply(context, args);
+                resolve();
+            }, delay);
+        });
+    };
+};
+
+
+const searchHandler = () => {
+    const searchInput = document.querySelector('#searchInput').value;
+    const timestamp = new Date().toLocaleTimeString();
+    console.log(`[${timestamp}] Search Input: ${searchInput}`);
+}
+const search = debounceFunc(searchHandler, 500);
+
+/**
+ * ES6 assignment 1 - to convert below function to single line
+ * 
+ *  const printName = (name) => {
+ *      return “Hi” + name;
+ *  }
+ */
+
+const printName = (name) =>`Hi ${name}`;
+
+/**
+ * ES6 assignment 2 - to convert below function to use template literals
+ * 
+ *  const printBill = (name, bill) => {
+ *      return “Hi “ + name + “, please pay: “ + bill;
+ *  }
+ */
+
+const printBill = ({name, bill}) => `Hi ${name}, please pay: ${bill}`;
+
+/**
+ * ES6 assignment 3 - to destructured below function 
+ * 
+ *  const person = {
+ *           name: “Noam Chomsky”,
+ *           age: 92
+ *  }
+ *          
+ *  let name = person.name;
+ *  let age = person.age;
+ *  console.log(name);
+ *  console.log(age);
+ */
+
+const person = {
+    name: "Noam Chomsky",
+    age: 92
+};
+
+const { name, age } = person;
+
+console.log(name);
+console.log(age);
+
+/**
+ * Assignment of storage using local and session
+ */
+const incrementLocal = () => {
+    if (localStorage.getItem("localVariableKey")) {
+        let count = localStorage.getItem("localVariableKey");
+        count = parseInt(count) + 1;
+        localStorage.setItem("localVariableKey", count)
+    } else {
+        localStorage.setItem("localVariableKey", 0)
+    }
+    document.querySelector('#localSpan').textContent = localStorage.getItem("localVariableKey");
+}
+
+const incrementSession = () => {
+    if (sessionStorage.getItem("sessionVariableKey")) {
+        let count = sessionStorage.getItem("sessionVariableKey");
+        count = parseInt(count) + 1;
+        sessionStorage.setItem("sessionVariableKey", count)
+    } else {
+        sessionStorage.setItem("sessionVariableKey", 0)
+    }
+    document.querySelector('#sessionSpan').textContent = sessionStorage.getItem("sessionVariableKey");
+}
+
